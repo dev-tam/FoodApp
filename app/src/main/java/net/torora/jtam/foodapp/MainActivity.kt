@@ -1,6 +1,7 @@
 package net.torora.jtam.foodapp
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,6 +41,13 @@ class MainActivity : AppCompatActivity() {
             var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var foodView=inflater.inflate(R.layout.food_ticket, null)
             foodView.ivFoodImage.setImageResource(food.image!!)
+            foodView.ivFoodImage.setOnClickListener {
+                val intent = Intent(context,FoodDetails::class.java)
+                intent.putExtra("name",food.name!!)
+                intent.putExtra("des",food.des!!)
+                intent.putExtra("image",food.image!!)
+                context!!.startActivity(intent)
+            }
             foodView.tvName.text=food.name!!
             return foodView
         }
