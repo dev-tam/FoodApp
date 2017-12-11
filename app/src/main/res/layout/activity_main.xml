@@ -8,6 +8,11 @@
     tools:context="net.torora.jtam.foodapp.MainActivity">
 
     <GridView
+        android:horizontalSpacing="5pt"
+        android:verticalSpacing="5pt"
+        android:columnWidth="64pt"
+        android:numColumns="auto_fit"
+        android:id="@+id/gvListFood"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
